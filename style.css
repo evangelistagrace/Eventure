@@ -14,6 +14,7 @@
 
 body{
   background: #dfdfdf;
+  font-size: 16px;
 }
 
 .wrapper{
@@ -127,9 +128,8 @@ a:link{
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   height: 30px;
-
 }
 
 .navbar-small ul li{
@@ -149,6 +149,11 @@ a:link{
   height: 80px;
 }
 
+.navbar-brand img{
+  width: 200px;
+}
+
+
 .sticky {
   position: fixed;
   top: 0;
@@ -158,15 +163,17 @@ a:link{
 header{
   height: 500px;
   background-image: url(https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80);
-height: 600px;
-background-repeat: no-repeat;
-background-position: center center;
-background-size: cover;
-background-attachment: fixed;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: "Source Sans Pro", sans-serif;
 }
+
 
 .header-text{
   align-self: center;
@@ -203,10 +210,80 @@ width: 400px;
   font-size: 25px;
 }
 
+.search-bar input:focus input::placeholder{
+  color: white;
+}
+
 span.input-group-text{
   background: transparent;
   color: white;
   border: 3px solid white;
   border-radius: 50px;
   border-left: none;
+}
+
+.location{
+  position: absolute;
+  top: 80%;
+  color: white;
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.location a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.location i{
+  margin-right: 5px;
+}
+
+.location span{
+  border-bottom: 1px solid white;
+  margin-left: 10px;
+}
+
+/*section */
+section{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+section:nth-of-type(odd){
+ background-color: #e7fbf6;
+}
+
+section:nth-of-type(even){
+  background-color: #fff;
+ }
+
+.section-title{
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.section-title.left{
+  text-align: left;
+}
+
+.section-title.right{
+  text-align: right;
+}
+
+.inline{
+  display: flex;
+  flex-direction: row; 
+}
+
+.inline .card{
+  margin: 10px;
+  width: 25rem;
 }
