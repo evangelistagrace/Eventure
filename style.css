@@ -158,6 +158,7 @@ a:link{
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99999;
 }
 
 header{
@@ -252,10 +253,11 @@ section{
   align-content: center;
   flex-flow: wrap;
   justify-content: center;
+  
 }
 
 section:nth-of-type(odd){
- background-color: #e7fbf6;
+ background-color: #f1f1f1;
 }
 
 section:nth-of-type(even){
@@ -278,6 +280,12 @@ section:nth-of-type(even){
   text-align: right;
 }
 
+.section-body{
+  margin: auto;
+}
+.section-body .btn-group button.btn{
+  width: 200px;
+}
 .inline{
   display: flex;
   flex-direction: row; 
@@ -286,4 +294,8 @@ section:nth-of-type(even){
 .inline .card{
   margin: 10px;
   width: 25rem;
+}
+
+.card-img-top::before{
+  height: 300px;
 }
