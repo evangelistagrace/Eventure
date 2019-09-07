@@ -121,7 +121,7 @@ a:link{
 }
 
 .navbar-small{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.685);
   color: white;
  padding-top: 2px;
   display: flex;
@@ -273,7 +273,7 @@ section:nth-of-type(even){
 .section-title{
   font-family: "Playfair Display", serif;
   font-size: 3rem;
-  color: black;
+  color: #414572;
   margin-bottom: 20px;
   width: 100%;
 }
