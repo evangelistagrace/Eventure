@@ -162,7 +162,7 @@ a:link{
 }
 
 header{
-  height: 500px;
+  width: 100%;
   background-image: url(https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80);
   height: 700px;
   background-repeat: no-repeat;
@@ -175,7 +175,13 @@ header{
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.center-container{
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
+}
 .header-text{
   align-self: center;
   color: white;
@@ -211,7 +217,7 @@ width: 400px;
   font-size: 25px;
 }
 
-.search-bar input:focus input::placeholder{
+.search-bar input::placeholder{
   color: white;
 }
 
@@ -282,6 +288,9 @@ section:nth-of-type(even){
 
 .section-body{
   margin: auto;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
 }
 .section-body .btn-group button.btn{
   width: 200px;
@@ -298,4 +307,133 @@ section:nth-of-type(even){
 
 .card-img-top::before{
   height: 300px;
+}
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.scrolling-wrapper .card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+
+
+/* cards */
+.scrolling-wrapper .card{
+  position: relative;
+  
+}
+
+.scrolling-wrapper .card::before{
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url('https://picsum.photos/id/194/200');
+  background-size: cover;
+  filter: hue-rotate(100deg);
+
+
+}
+
+.scrolling-wrapper .card::after{
+  position: absolute;
+  top:30%;
+  left: 50%;
+    transform: translate(-50%, 0);
+  color: white;
+  font-size: 30px;
+}
+.scrolling-wrapper .card-1::after{
+  content: 'Concert';
+
+}
+.scrolling-wrapper .card-2::after{
+  content: 'Science & Technology';
+
+}
+.scrolling-wrapper .card-3::after{
+  content: 'Education';
+
+}
+.scrolling-wrapper .card-4::after{
+  content: 'Seminar';
+
+}
+.scrolling-wrapper .card-5::after{
+  content: 'Workshop';
+
+}
+.scrolling-wrapper .card-6::after{
+  content: 'Arts';
+
+}
+.scrolling-wrapper .card-7::after{
+  content: 'Sports';
+
+}
+/* .scrolling-wrappper .card .card-title
+{
+  position: absolute;
+  top:0;
+  left:0;
+} */
+
+/* footer */
+.context-dark, .bg-gray-dark, .bg-primary {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+  color: #ffffff;
+}
+.col-md-4.nav-list li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.col-md-4 .nav-list li a:hover:before {
+  margin-left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 23px;
+  font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.social-container .col {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.col-md-4 .nav-list li a:before {
+  content: "\f14f";
+  font: 400 21px/1 "Material Design Icons";
+  color: #4d6de6;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-left: -28px;
+  margin-right: 7px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .22s ease;
 }
