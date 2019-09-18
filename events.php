@@ -1,3 +1,10 @@
+<?php
+
+require "config.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +21,29 @@
     <!--Content-->
     <section>
         <div class="section-title left">Events</div>
+        <!-- select events table -->
+        <?php $results = mysqli_query($db, "SELECT * FROM events ") ?>
 
         <!-- first row -->
         <div class="row">
+        <?php while ($row = mysqli_fetch_array($results)) { ?>
             <div class="col">
                 <div class="event card">
-                    <img src="img/events/charity-run.jpg" class="card-img-top" alt="...">
+                    <img src="<?php echo $row['eventImage']; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Desa Parkcity Charity Run</h5>
-                        <p class="card-text">This race will be organized and promoted as a charity run, where funds will
+                        <h5 class="card-title"><?php echo $row['eventName']; ?></h5>
+                        <?php $date = strtotime($row['eventDate']) ?>
+                        <span class="badge badge-success"><?php echo date('d/m/y',$date) ?></span><span class="badge badge-info ml-2"><?php echo $row['eventCategory'] ?></span>
+                        <p class="card-text mt-2">This race will be organized and promoted as a charity run, where funds will
                             be raised from the participating runners, and donated to selected charities identified by
                             the organizing committee.</p>
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
             </div>
+            <?php } ?>
 
-            <div class="col">
+            <!-- <div class="col">
                 <div class="event card">
                     <img src="img/events/career-fair.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -41,7 +54,7 @@
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col">
                 <div class="event card">
