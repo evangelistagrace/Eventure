@@ -3,16 +3,16 @@
 
 <head>
     <?php include 'head.php' ?>
-    <title>Eventure</title>
+    <title>Eventure - Home</title>
 </head>
 
 <body>
     <?php include 'navbarSmall.php' ?>
 
     <header>
-        <?php include 'navbarBig.php' ?>
+        <?php include 'navbar-Home.php' ?>
 
-        <!-- CONTENT -->
+        
         <div class="center-container">
 
             <div class="header-text">
@@ -36,7 +36,7 @@
         </div>
     </header>
 
-    <!--Upcoming events-->
+    <!--Content-->
     <section>
         <div class="section-title left">Upcoming</div>
         <div class="inline">

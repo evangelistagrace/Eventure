@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito");
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro&display=swap');
+
+
 /*Register/login form*/
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   outline: none;
   text-decoration: none;
   list-style: none;
@@ -17,8 +18,6 @@ body {
 }
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 560px;
   width: 100%;
@@ -26,8 +25,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .wrapper .left,
@@ -115,8 +113,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a:link {
@@ -127,18 +124,10 @@ a:link {
   background-color: rgba(0, 0, 0, 0.685);
   color: white;
   padding-top: 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-family: 'Source Sans Pro', sans-serif;
   height: 30px;
 }
@@ -150,8 +139,7 @@ a:link {
 
 .hotline img,
 .email img {
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
+  transform: scale(0.6);
 }
 
 .navbar-small li a {
@@ -165,6 +153,7 @@ a:link {
 .navbar-brand img {
   width: 200px;
 }
+
 
 .sticky {
   position: fixed;
@@ -181,33 +170,22 @@ header {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   position: relative;
   font-family: "Source Sans Pro", sans-serif;
 }
 
 .center-container {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-content: center;
+  justify-content: center;
+
 }
 
 .header-text {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   color: white;
   font-size: 40px;
   position: absolute;
@@ -220,9 +198,7 @@ header {
   position: absolute;
   top: 65%;
   width: 400px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .search-bar input {
@@ -234,6 +210,7 @@ header {
   font-size: 25px;
 }
 
+
 .search-bar input:focus {
   background: transparent;
   border: 3px solid white;
@@ -241,18 +218,6 @@ header {
   border-right: none;
   color: white;
   font-size: 25px;
-}
-
-.search-bar input::-webkit-input-placeholder {
-  color: white;
-}
-
-.search-bar input:-ms-input-placeholder {
-  color: white;
-}
-
-.search-bar input::-ms-input-placeholder {
-  color: white;
 }
 
 .search-bar input::placeholder {
@@ -271,9 +236,7 @@ span.input-group-text {
   position: absolute;
   top: 80%;
   color: white;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   font-size: 1.2rem;
 }
 
@@ -294,20 +257,12 @@ span.input-group-text {
 /*section */
 section {
   padding: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  flex-flow: wrap;
+  justify-content: center;
+
 }
 
 section:nth-of-type(odd) {
@@ -337,11 +292,8 @@ section:nth-of-type(even) {
 .section-body {
   margin: auto;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 .section-body .btn-group button.btn {
@@ -349,13 +301,8 @@ section:nth-of-type(even) {
 }
 
 .inline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .inline .card {
@@ -370,30 +317,25 @@ section:nth-of-type(even) {
 .scrolling-wrapper {
   overflow-x: auto;
   overflow-y: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .scrolling-wrapper .card {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 200px;
   height: 200px;
   margin: 10px;
 }
 
+
 /* cards */
+
 /* category carousel */
 .scrolling-wrapper .card {
   position: relative;
+
 }
 
 .scrolling-wrapper .card::before {
@@ -403,48 +345,53 @@ section:nth-of-type(even) {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-image: url("https://picsum.photos/id/194/200");
+  background-image: url('https://picsum.photos/id/194/200');
   background-size: cover;
-  -webkit-filter: hue-rotate(100deg);
-          filter: hue-rotate(100deg);
+  filter: hue-rotate(100deg);
 }
 
 .scrolling-wrapper .card::after {
   position: absolute;
   top: 30%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   color: white;
   font-size: 30px;
 }
 
 .scrolling-wrapper .card-1::after {
   content: 'Concert';
+
 }
 
 .scrolling-wrapper .card-2::after {
   content: 'Science & Technology';
+
 }
 
 .scrolling-wrapper .card-3::after {
   content: 'Education';
+
 }
 
 .scrolling-wrapper .card-4::after {
   content: 'Seminar';
+
 }
 
 .scrolling-wrapper .card-5::after {
   content: 'Workshop';
+
 }
 
 .scrolling-wrapper .card-6::after {
   content: 'Arts';
+
 }
 
 .scrolling-wrapper .card-7::after {
   content: 'Sports';
+
 }
 
 /* .scrolling-wrappper .card .card-title
@@ -453,6 +400,7 @@ section:nth-of-type(even) {
   top:0;
   left:0;
 } */
+
 /* footer */
 footer {
   padding-top: 20px;
@@ -489,16 +437,9 @@ ol {
 }
 
 .social-inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   padding: 23px;
   font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -517,46 +458,47 @@ ol {
 /* event cards */
 .event.card {
   min-width: 30%;
-}
 
-.event.card .card-body .card-text {
-  /* hide text if it more than N lines  */
-  overflow: hidden;
-  /* for set '...' in absolute position */
-  position: relative;
-  /* use this value to count block height */
-  line-height: 1.2em;
-  /* max-height = line-height (1.2) * lines max number (3) */
-  max-height: 3.6em;
-  /* fix problem when last visible word doesn't adjoin right side  */
-  text-align: justify;
-  /* place for '...' */
-  margin-right: -1em;
-  padding-right: 1em;
-}
+  .card-body {
+    .card-text {
+      /* hide text if it more than N lines  */
+      overflow: hidden;
+      /* for set '...' in absolute position */
+      position: relative;
+      /* use this value to count block height */
+      line-height: 1.2em;
+      /* max-height = line-height (1.2) * lines max number (3) */
+      max-height: 3.6em;
+      /* fix problem when last visible word doesn't adjoin right side  */
+      text-align: justify;
+      /* place for '...' */
+      margin-right: -1em;
+      padding-right: 1em;
 
-.event.card .card-body .card-text:before {
-  /* points in the end */
-  content: '...';
-  /* absolute position */
-  position: absolute;
-  /* set position to right bottom corner of block */
-  right: 0;
-  bottom: 0;
-}
+      &:before {
+        /* points in the end */
+        content: '...';
+        /* absolute position */
+        position: absolute;
+        /* set position to right bottom corner of block */
+        right: 0;
+        bottom: 0;
+      }
 
-.event.card .card-body .card-text:after {
-  /* points in the end */
-  content: '';
-  /* absolute position */
-  position: absolute;
-  /* set position to right bottom corner of text */
-  right: 0;
-  /* set width and height */
-  width: 1em;
-  height: 1em;
-  margin-top: 0.2em;
-  /* bg color = bg color under block */
-  background: white;
+      &:after {
+        /* points in the end */
+        content: '';
+        /* absolute position */
+        position: absolute;
+        /* set position to right bottom corner of text */
+        right: 0;
+        /* set width and height */
+        width: 1em;
+        height: 1em;
+        margin-top: 0.2em;
+        /* bg color = bg color under block */
+        background: white;
+      }
+    }
+  }
 }
-/*# sourceMappingURL=style.css.map */

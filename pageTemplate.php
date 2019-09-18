@@ -11,7 +11,7 @@
     <?php include 'navbarBig.php' ?>
 
 
-    <!--Upcoming events-->
+    <!--Content-->
     <section>
         <div class="section-title left">Upcoming</div>
 
