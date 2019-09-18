@@ -28,21 +28,19 @@ require "config.php";
         <div class="row">
         <?php while ($row = mysqli_fetch_array($results)) { ?>
             <div class="col">
-                <div class="event card">
+                <div class="event card" style="min-width: 18rem;">
                     <img src="<?php echo $row['eventImage']; ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['eventName']; ?></h5>
                         <?php $date = strtotime($row['eventDate']) ?>
                         <span class="badge badge-success"><?php echo date('d/m/y',$date) ?></span><span class="badge badge-info ml-2"><?php echo $row['eventCategory'] ?></span>
-                        <p class="card-text mt-2">This race will be organized and promoted as a charity run, where funds will
-                            be raised from the participating runners, and donated to selected charities identified by
-                            the organizing committee.</p>
+                        <p class="card-text mt-2"><?php echo $row['eventDesc']?></p>
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
             </div>
             <?php } ?>
-
+        </div>
             <!-- <div class="col">
                 <div class="event card">
                     <img src="img/events/career-fair.jpg" class="card-img-top" alt="...">
@@ -56,7 +54,7 @@ require "config.php";
                 </div>
             </div> -->
 
-            <div class="col">
+            <!-- <div class="col">
                 <div class="event card">
                     <img src="img/events/data-science-show.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -81,12 +79,12 @@ require "config.php";
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- second row -->
         <div class="row">
-            <div class="col">
+            <!-- <div class="col">
                 <div class="event card">
                     <img src="img/events/dance-workshop.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -95,9 +93,9 @@ require "config.php";
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col">
+            <!-- <div class="col">
                 <div class="event card">
                     <img src="img/events/kl-race.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -111,9 +109,9 @@ All you have to do is get a team of 8 to run for 24 hours. Easy!
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col">
+            <!-- <div class="col">
                 <div class="event card">
                     <img src="img/events/guitar-class.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -122,7 +120,7 @@ All you have to do is get a team of 8 to run for 24 hours. Easy!
                         <a href="#" class="btn btn-primary">GET TICKETS</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
          <!-- third row -->

@@ -453,11 +453,14 @@ ol {
 
 .row {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 /* event cards */
 .event.card {
-  min-width: 30%;
 
   .card-body {
     .card-text {
