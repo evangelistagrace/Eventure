@@ -2,6 +2,7 @@
 
 require "config.php";
 
+
 ?>
 
 
@@ -20,7 +21,7 @@ require "config.php";
 
     <!--Content-->
     <section>
-        <div class="section-title left">Events</div>
+        <div class="section-title left">Browse Events</div>
         <!-- select events table -->
         <?php $results = mysqli_query($db, "SELECT * FROM events ") ?>
 
@@ -36,7 +37,11 @@ require "config.php";
                         <span class="badge badge-success"><?php echo date('d/m/y',$date) ?></span><span
                             class="badge badge-info ml-2"><?php echo $row['eventCategory'] ?></span>
                         <p class="card-text mt-2"><?php echo $row['eventDesc']?></p>
-                        <a href="#" class="btn btn-primary">GET TICKETS</a>
+                        <?php $eventid = $row['eventID'] ?>
+                        <form action="purchase.php" method="get">
+                        <button type="submit" name="eventid" value="<?php echo $row['eventID']?>" class="btn btn-primary">GET TICKETS</button>
+                        
+                        </form>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,11 @@
+<?php
+
+require "config.php";
+
+$eventid = $_GET['eventid'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +21,16 @@
 
     <!--Content-->
     <section>
+    <?php $results = mysqli_query($db, "SELECT * FROM events WHERE eventID = $eventid ") ?>
         <div class="row">
             <div class="col">
+            <?php while ($row = mysqli_fetch_array($results)) { ?>
                 <div class="purchase form-container">
                     <div class="img-container">
-                        <img src="img/events/charity-run.jpg" alt="">
-                        <h1 class="text-center">Event title</h1>
+                        <img src="<?php echo $row['eventImage']; ?>" alt="">
+                        <h1 class="text-center"><?php echo $row['eventName']; ?></h1>
                     </div>
-                    <div class="row">
+                    <div class="row mt-5">
                         <div class="col-8">
                             <form class="purchase-form" action="">
                                <div class="form-group">
@@ -54,13 +64,31 @@
                             </form>
                         </div>
                         <div class="col-4">
-                            <h5 class="text-center">Event Description</h5>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla reiciendis maiores, natus sunt eaque est perferendis distinctio labore praesentium, atque omnis quaerat aliquam ducimus quibusdam officiis consequuntur? Quis, minus eos?</p>
+                            <h5 class="text-center">Description</h5>
+                            <p class="text-justify"><?php echo $row['eventDesc']?></p>
+
+                            <h5 class="text-center">Date</h5>
+                            <?php $date = strtotime($row['eventDate']) ?>
+                            <p class="text-center"><?php echo date('d M Y',$date) ?></p>
+
+                            <h5 class="text-center">Location</h5>
+                            <p><?php echo $row['eventAddress']?></p>
+
+                            <h5 class="text-center">Ticket Price</h5>
+                            <?php 
+                            if ($row['eventTicketPrice'] == 0)
+                                $ticketPrice = "FREE";
+                            else
+                                $ticketPrice = "RM ".$row['eventTicketPrice'];
+                            
+                            ?>
+                            <p class="text-center"><?php echo $ticketPrice ?></p>
                         </div>
                     </div>
                 </div>
-
+                <?php } ?>
             </div>
+            
         </div>
 
     </section>
