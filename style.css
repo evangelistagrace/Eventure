@@ -574,7 +574,25 @@ ol {
   background: white;
 }
 
-.purchase.form-container, .payment.form-container {
+.payment.form-container {
+  margin: auto;
+  padding: 20px 0;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: white;
+}
+
+.purchase.form-container {
   margin: auto;
   width: 70%;
   display: -webkit-box;
@@ -591,16 +609,16 @@ ol {
   background-color: white;
 }
 
-.purchase.form-container .img-container, .payment.form-container .img-container {
+.purchase.form-container .img-container {
   position: relative;
 }
 
-.purchase.form-container .img-container img, .payment.form-container .img-container img {
+.purchase.form-container .img-container img {
   width: 100%;
   position: relative;
 }
 
-.purchase.form-container .img-container h1, .payment.form-container .img-container h1 {
+.purchase.form-container .img-container h1 {
   position: absolute;
   top: 50%;
   left: 0;
@@ -611,7 +629,7 @@ ol {
   text-align: center;
 }
 
-.purchase.form-container .row, .payment.form-container .row {
+.purchase.form-container .row {
   padding: 10px 20px;
 }
 
@@ -630,5 +648,17 @@ ol {
 .col-4 h5 {
   background-color: rgba(44, 25, 25, 0.294);
   padding: 5px 0;
+}
+
+.form-group .row {
+  padding: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.form-group .row .col {
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

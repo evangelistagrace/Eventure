@@ -21,7 +21,7 @@ require "config.php";
 
     <!--Content-->
     <section>
-        <div class="section-title left">Browse Events</div>
+        <div class="section-title text-center">Browse Events</div>
         <!-- select events table -->
         <?php $results = mysqli_query($db, "SELECT * FROM events ") ?>
 
