@@ -574,7 +574,7 @@ ol {
   background: white;
 }
 
-.purchase.form-container {
+.purchase.form-container, .payment.form-container {
   margin: auto;
   width: 70%;
   display: -webkit-box;
@@ -591,16 +591,16 @@ ol {
   background-color: white;
 }
 
-.purchase.form-container .img-container {
+.purchase.form-container .img-container, .payment.form-container .img-container {
   position: relative;
 }
 
-.purchase.form-container .img-container img {
+.purchase.form-container .img-container img, .payment.form-container .img-container img {
   width: 100%;
   position: relative;
 }
 
-.purchase.form-container .img-container h1 {
+.purchase.form-container .img-container h1, .payment.form-container .img-container h1 {
   position: absolute;
   top: 50%;
   left: 0;
@@ -611,7 +611,7 @@ ol {
   text-align: center;
 }
 
-.purchase.form-container .row {
+.purchase.form-container .row, .payment.form-container .row {
   padding: 10px 20px;
 }
 

@@ -39,8 +39,8 @@ require "config.php";
                         <p class="card-text mt-2"><?php echo $row['eventDesc']?></p>
                         <?php $eventid = $row['eventID'] ?>
                         <form action="purchase.php" method="get">
-                        <button type="submit" name="eventid" value="<?php echo $row['eventID']?>" class="btn btn-primary">GET TICKETS</button>
-                        
+                            <button type="submit" name="eventid" value="<?php echo $row['eventID']?>"
+                                class="btn btn-primary">GET TICKETS</button>
                         </form>
                     </div>
                 </div>

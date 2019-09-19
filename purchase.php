@@ -3,7 +3,8 @@
 require "config.php";
 
 $eventid = $_GET['eventid'];
-
+$ticketPrice = '';
+$_GLOBALS['ticketPrice'] = '';
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +33,14 @@ $eventid = $_GET['eventid'];
                     </div>
                     <div class="row mt-5">
                         <div class="col-8">
-                            <form class="purchase-form" action="">
+                            <form class="purchase-form" action="payment.php" method="get">
                                <div class="form-group">
                                    <label for="fullName">Full Name</label>
-                                   <input type="text" class="form-control" name="fullName">
+                                   <input type="text" class="form-control" name="fullName" required>
                                </div>
                                <div class="form-group">
                                    <label for="email">Email</label>
-                                   <input type="text" class="form-control" name="email">
+                                   <input type="text" class="form-control" name="email" required>
                                </div>
                                <div class="form-group">
                                    <div class="row">
@@ -51,15 +52,16 @@ $eventid = $_GET['eventid'];
                                     <option value="3">3</option>
                                    </select>
                                   </div>
-                                  <div class="col">
+                                  <!-- <div class="col">
                                   <label for="totalPrice">Total</label>
-                                   <input type="text" class="form-control" name="email" placeholder="RM 0.00" disabled>
-                                  </div>
+                                  <?php $ticketPrice =  $row['eventTicketPrice'] ?>
+                                   <input type="text" class="form-control" name="totalPrice" id="totalPrice" value="<?php echo $ticketPrice?>" disabled>
+                                  </div> -->
                                    </div>
                                   
                                </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary btn-block">Checkout</button>
+                                    <button type="submit" class="btn btn-primary btn-block">Checkout</button>
                                 </div>
                             </form>
                         </div>
@@ -96,6 +98,16 @@ $eventid = $_GET['eventid'];
     <?php include 'footer.php' ?>
 
 
+<script>
+function updateTotal(x, y){
+
+    // const qty = document.getElementById("ticketQty");
+    // const ticketQty = qty.options[qty.selectedIndex].value;
+    const totalPrice =  document.getElementById('totalPrice');
+    totalPrice.value = x*y;
+    // $ticketQty
+}
+</script>
 </body>
 
 </html>
