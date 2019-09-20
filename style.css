@@ -23,7 +23,7 @@ body {
   display: flex;
   max-width: 560px;
   width: 100%;
-  height: 350px;
+  height: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,7 +39,7 @@ body {
 }
 
 .wrapper .left {
-  background: #494f57;
+  background: #c2c0c0;
 }
 
 .wrapper .left h3 {

@@ -10,3 +10,6 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+const alerts = Array.from(document.getElementsByClassName('alert'));
+alerts.forEach(alert => setTimeout(alert, 3000));

@@ -37,6 +37,12 @@ if(isset($_POST['pay'])){
         array_push($errors, "Email is required");
     }
 
+    if(count($errors)==0){
+        $query = "INSERT INTO payments (country, cardNum, cardExpiry, cardCVV, firstName, lastName, address, mobileNum, email) VALUES ('$country', '$cardNum', '$cardExpiry', '$cardCVV', '$firstName', '$lastName', '$address', '$mobileNum', '$email')";
+        
+        mysqli_query($db, $query);
+    }
+
 }
 
 ?>
