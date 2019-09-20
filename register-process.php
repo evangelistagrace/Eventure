@@ -9,18 +9,18 @@ if(isset($_POST['register'])){
     $userPassword1 = mysqli_real_escape_string($db, $_POST['userPassword1']);
     $userPassword2 = mysqli_real_escape_string($db, $_POST['userPassword2']);
 
-    if(empty($userName)){
-       array_push($errors, "Username is required"); 
-    }
-    if(empty($userEmail)){
-        array_push($errors, "E-mail is required"); 
-     }
-     if(empty($userPassword1)){
-        array_push($errors, "Password is required"); 
-     }
-     if(empty($userPassword2)){
-        array_push($errors, "Password confirmation is required"); 
-     }
+   //  if(empty($userName)){
+   //     array_push($errors, "Username is required"); 
+   //  }
+   //  if(empty($userEmail)){
+   //      array_push($errors, "E-mail is required"); 
+   //   }
+   //   if(empty($userPassword1)){
+   //      array_push($errors, "Password is required"); 
+   //   }
+   //   if(empty($userPassword2)){
+   //      array_push($errors, "Password confirmation is required"); 
+   //   }
 
 //  check if there's existing user in the database
         $query = "SELECT * FROM users WHERE userEmail ='$userEmail' LIMIT 1";
@@ -43,8 +43,13 @@ if(isset($_POST['register'])){
             $userPassword  = md5($userPassword1); //encrypt password
 
             //insert data into user table
-$query = "INSERT INTO users (userName, userEmail, userPassword) VALUES ('$userName', '$userEmail', '$userPassword')";
-mysqli_query($db, $query);
+            $query = "INSERT INTO users (userName, userEmail, userPassword) VALUES ('$userName', '$userEmail', '$userPassword')";
+            mysqli_query($db, $query);
+
+            $_SESSION['userEmail'] = $user['userEmail'];
+            $_SESSION['userId'] = $user['userId'];
+
+            header('location: home.php');
         
         }
 }

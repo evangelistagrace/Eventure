@@ -1,7 +1,7 @@
 <?php
 
 require 'config.php';
-
+$errors =array();
 ////LOGIN////
 if(isset($_POST['login'])){
     //verify input
