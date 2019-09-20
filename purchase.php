@@ -72,7 +72,7 @@ if(isset($_GET['logout'])){
                                 </div>
 
                                 <div class="form-group">
-                                        <button class="btn btn-primary" name="checkout-success" type="submit">Checkout</button>
+                                        <button class="btn btn-primary" name="checkout-free" type="submit">Checkout</button>
                                 </div>
                             </form>
                             <?php else: ?>

@@ -2,6 +2,9 @@
 
 require "payment-process.php";
 $eventid = $_GET['eventid'];
+$fullName = $_GET['fullName'];
+$ticketQty= $_GET['ticketQty'];
+
 // $ticketPrice= $_GET['ticketPrice'];
 
 //prevent user from accessing index.php before they log in
@@ -317,7 +320,15 @@ if(isset($_GET['logout'])){
                                     <input type="date" class="form-control" placeholder="Expiry Date" name="cardExpiry" required>
                                 </div>
                                 <div class="col-5">
-                                    <input type="text" class="form-control" placeholder="CVV" name="cardCVV" required>
+                                    <input type="number" class="form-control" placeholder="CVV" name="cardCVV" required>
+
+                                    <input type="hidden" name="eventID" value="<?php echo $eventid ?>">
+
+                                    <input type="hidden" name="fullName" value="<?php echo $fullName ?>">
+
+                                    <input type="hidden" name="ticketQty" value="<?php echo $ticketQty ?>">
+
+
                                 </div>
                             </div>
                         </div>
@@ -347,8 +358,8 @@ if(isset($_GET['logout'])){
                             <h5 class="mb-3">Contact Information</h5>
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="text" class="form-control mb-3" placeholder="Mobile Number" name="mobileNum" required>
-                                    <input type="text" class="form-control mb-3" placeholder="Email Address" name="email" required>
+                                    <input type="tel" class="form-control mb-3" placeholder="Mobile Number" name="mobileNum" required>
+                                    <input type="email" class="form-control mb-3" placeholder="Email Address" name="email" required>
                                 </div>
                             </div>
                         </div>
@@ -356,7 +367,7 @@ if(isset($_GET['logout'])){
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-12">
-                                    <button type="submit" name="pay" class="btn btn-primary btn-block">Pay Now</button>
+                                    <button type="submit" name="checkout-payed" class="btn btn-primary btn-block">Pay Now</button>
                                 </div>
                             </div>
                         </div>

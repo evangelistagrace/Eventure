@@ -52,6 +52,10 @@ if(isset($_POST['pay'])){
     $mobileNum = mysqli_real_escape_string($db,$_POST['mobileNum']);
     $email = mysqli_real_escape_string($db,$_POST['email']);
 
+    $fullName = mysqli_real_escape_string($db, $_POST['fullName']);
+    $ticketQty = mysqli_real_escape_string($db, $_POST['ticketQty']);
+    $eventID = mysqli_real_escape_string($db, $_POST['eventID']);
+
     if(empty($cardNum)){
         array_push($errors, "Card number is required");
     }
@@ -78,6 +82,12 @@ if(isset($_POST['pay'])){
         $query = "INSERT INTO payments (country, cardNum, cardExpiry, cardCVV, firstName, lastName, address, mobileNum, email) VALUES ('$country', '$cardNum', '$cardExpiry', '$cardCVV', '$firstName', '$lastName', '$address', '$mobileNum', '$email')";
         
         mysqli_query($db, $query);
+
+        $query2 = "INSERT INTO orders (userEmail, fullName, eventID, ticketQty) VALUES ('yy', 'yy', 'yy', 'yy')";
+
+        mysqli_query($db, $query2);
+    
+        header('location: myTickets.php');
     }
 
 }
