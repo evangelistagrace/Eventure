@@ -3,6 +3,28 @@ require 'config.php';
 
 $errors = array();
 
+$userEmail = $_SESSION['userEmail'];
+
+//check purchase form for free payment and add to orders
+if(isset($_POST['checkout-success'])){
+    $fullName = mysqli_real_escape_string($db, $_POST['fullName']);
+    // $email = mysqli_real_escape_string($db, $_POST['email']);
+    $ticketQty = mysqli_real_escape_string($db, $_POST['ticketQty']);
+    $eventID = mysqli_real_escape_string($db, $_POST['eventID']);
+
+
+    if(isset($_SESSION['userEmail'])){
+        $query = "INSERT INTO orders (userEmail, userName, eventID, ticketQty) VALUES ('$userEmail', '$fullName', '$eventID', '$ticketQty')";
+
+    mysqli_query($db, $query);
+
+    header('location: myTickets.php');
+    }
+    
+
+}
+
+
 if(isset($_POST['pay'])){
 
     $country = mysqli_real_escape_string($db,$_POST['country']);

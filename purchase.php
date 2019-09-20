@@ -1,6 +1,6 @@
 <?php
 
-require "config.php";
+require "payment-process.php";
 
 $eventid = $_GET['eventid'];
 $ticketPrice= $_GET['ticketPrice'];
@@ -35,14 +35,13 @@ $ticketPrice= $_GET['ticketPrice'];
                     <div class="row mt-5">
                         <div class="col-8">
                             <?php if($ticketPrice == 0): ?>
-                            <form class="purchase-form" action="myTickets.php" method="post">
+                            <form class="purchase-form" action="purchase.php" method="post">
+
                                 <div class="form-group">
                                     <label for="fullName">Full Name</label>
                                     <input type="text" class="form-control" name="fullName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" required>
+                                    <!-- hidden eventid input -->
+                                    <input type="hidden" name="eventID" value="<?php echo $eventid ?>">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
@@ -54,18 +53,13 @@ $ticketPrice= $_GET['ticketPrice'];
                                                 <option value="3">3</option>
                                             </select>
                                         </div>
-                                        <!-- <div class="col">
-                                  <label for="totalPrice">Total</label>
-                                  <?php $ticketPrice =  $row['eventTicketPrice'] ?>
-                                   <input type="text" class="form-control" name="totalPrice" id="totalPrice" value="<?php echo $ticketPrice?>" disabled>
-                                  </div> -->
+                                       
                                     </div>
 
                                 </div>
 
                                 <div class="form-group">
-                                        <button type="submit" name="eventid" value="<?php echo $row['eventID']?>"
-                                            class="btn btn-primary">Checkout</button>
+                                        <button class="btn btn-primary" name="checkout-success" type="submit">Checkout</button>
                                 </div>
                             </form>
                             <?php else: ?>
