@@ -37,9 +37,10 @@ require "config.php";
                         <span class="badge badge-success"><?php echo date('d/m/y',$date) ?></span><span
                             class="badge badge-info ml-2"><?php echo $row['eventCategory'] ?></span>
                         <p class="card-text mt-2"><?php echo $row['eventDesc']?></p>
-                        <?php $eventid = $row['eventID'] ?>
+                        <?php $eventid = $row['eventID']; $eventTicketPrice = $row['eventTicketPrice'] ?>
                         <form action="purchase.php" method="get">
-                            <button type="submit" name="eventid" value="<?php echo $row['eventID']?>"
+                            <input type="hidden" name="ticketPrice" value="<?php echo $eventTicketPrice?>">
+                            <button type="submit" name="eventid" value="<?php echo $eventid?>"
                                 class="btn btn-primary">GET TICKETS</button>
                         </form>
                     </div>

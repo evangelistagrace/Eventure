@@ -1,6 +1,8 @@
 <?php
 
 require "payment-process.php";
+$eventid = $_GET['eventid'];
+// $ticketPrice= $_GET['ticketPrice'];
 
 ?>
 

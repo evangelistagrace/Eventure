@@ -3,8 +3,9 @@
 require "config.php";
 
 $eventid = $_GET['eventid'];
-$ticketPrice = '';
-$_GLOBALS['ticketPrice'] = '';
+$ticketPrice= $_GET['ticketPrice'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +23,10 @@ $_GLOBALS['ticketPrice'] = '';
 
     <!--Content-->
     <section>
-    <?php $results = mysqli_query($db, "SELECT * FROM events WHERE eventID = $eventid ") ?>
+        <?php $results = mysqli_query($db, "SELECT * FROM events WHERE eventID = $eventid ") ?>
         <div class="row">
             <div class="col">
-            <?php while ($row = mysqli_fetch_array($results)) { ?>
+                <?php while ($row = mysqli_fetch_array($results)) { ?>
                 <div class="purchase form-container">
                     <div class="img-container">
                         <img src="<?php echo $row['eventImage']; ?>" alt="">
@@ -33,37 +34,78 @@ $_GLOBALS['ticketPrice'] = '';
                     </div>
                     <div class="row mt-5">
                         <div class="col-8">
-                            <form class="purchase-form" action="payment.php" method="get">
-                               <div class="form-group">
-                                   <label for="fullName">Full Name</label>
-                                   <input type="text" class="form-control" name="fullName" required>
-                               </div>
-                               <div class="form-group">
-                                   <label for="email">Email</label>
-                                   <input type="text" class="form-control" name="email" required>
-                               </div>
-                               <div class="form-group">
-                                   <div class="row">
-                                       <div class="col">
-                                  <label for="ticketQty">Tickets</label>
-                                   <select name="ticketQty" id="ticketQty">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                   </select>
-                                  </div>
-                                  <!-- <div class="col">
+                            <?php if($ticketPrice == 0): ?>
+                            <form class="purchase-form" action="myTickets.php" method="post">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" name="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="ticketQty">Tickets</label>
+                                            <select name="ticketQty" id="ticketQty">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="col">
                                   <label for="totalPrice">Total</label>
                                   <?php $ticketPrice =  $row['eventTicketPrice'] ?>
                                    <input type="text" class="form-control" name="totalPrice" id="totalPrice" value="<?php echo $ticketPrice?>" disabled>
                                   </div> -->
-                                   </div>
-                                  
-                               </div>
+                                    </div>
+
+                                </div>
+
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Checkout</button>
+                                        <button type="submit" name="eventid" value="<?php echo $row['eventID']?>"
+                                            class="btn btn-primary">Checkout</button>
                                 </div>
                             </form>
+                            <?php else: ?>
+                            <form class="purchase-form" action="payment.php" method="get">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" name="fullName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="ticketQty">Tickets</label>
+                                            <select name="ticketQty" id="ticketQty">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="col">
+                                  <label for="totalPrice">Total</label>
+                                  <?php $ticketPrice =  $row['eventTicketPrice'] ?>
+                                   <input type="text" class="form-control" name="totalPrice" id="totalPrice" value="<?php echo $ticketPrice?>" disabled>
+                                  </div> -->
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <form action="payment.php" method="get">
+                                        <button type="submit" name="eventid" value="<?php echo $row['eventID']?>"
+                                            class="btn btn-primary">Checkout</button>
+                                    </form>
+                                </div>
+                            </form>
+                            <?php endif; ?>
+
                         </div>
                         <div class="col-4">
                             <h5 class="text-center">Description</h5>
@@ -90,7 +132,7 @@ $_GLOBALS['ticketPrice'] = '';
                 </div>
                 <?php } ?>
             </div>
-            
+
         </div>
 
     </section>
@@ -98,16 +140,16 @@ $_GLOBALS['ticketPrice'] = '';
     <?php include 'footer.php' ?>
 
 
-<script>
-function updateTotal(x, y){
+    <script>
+        function updateTotal(x, y) {
 
-    // const qty = document.getElementById("ticketQty");
-    // const ticketQty = qty.options[qty.selectedIndex].value;
-    const totalPrice =  document.getElementById('totalPrice');
-    totalPrice.value = x*y;
-    // $ticketQty
-}
-</script>
+            // const qty = document.getElementById("ticketQty");
+            // const ticketQty = qty.options[qty.selectedIndex].value;
+            const totalPrice = document.getElementById('totalPrice');
+            totalPrice.value = x * y;
+            // $ticketQty
+        }
+    </script>
 </body>
 
 </html>
