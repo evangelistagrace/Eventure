@@ -2,7 +2,18 @@
 
 require "config.php";
 
-
+//prevent user from accessing index.php before they log in
+if(!isset($_SESSION['userEmail'])){
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+//logout user session
+if(isset($_GET['logout'])){
+    session_destroy();
+    unset($_SESSION['userId']); 
+    unset($_SESSION['userEmail']); 
+    header("location: login.php");
+}
 ?>
 
 

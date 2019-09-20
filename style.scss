@@ -405,6 +405,8 @@ section:nth-of-type(even) {
 /* footer */
 footer {
   padding-top: 20px;
+  margin-bottom: -30px;
+
 }
 
 .context-dark,
@@ -591,6 +593,7 @@ ol {
 
 
 //tickets
+
 .lib-panel {
   margin-bottom: 20Px;
   
@@ -628,7 +631,7 @@ ol {
   position: relative;
   height: 100%;
   display: block;
-  font-size: 13px;
+  font-size: 20px;
 }
 .lib-panel .lib-row.lib-desc a{
   position: absolute;

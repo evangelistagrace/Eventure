@@ -19,7 +19,7 @@ echo '
                     <a class="nav-link" href="events.php">Events<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="tickets.php">My Tickets</a>
+                    <a class="nav-link" href="myTickets.php">My Tickets</a>
                 </li>
             </ul>
         </div>
