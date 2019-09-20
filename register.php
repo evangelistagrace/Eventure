@@ -59,7 +59,7 @@ require 'register-process.php';
 
             <div class="form-group">
               <div class="col-md-offset-3 col-md-9">
-              <button type="submit" name="register" class="btn btn-info btn-block" id="btn-signup">Pay Now</button>
+              <button type="submit" name="register" class="btn btn-info btn-block" id="btn-signup">Register</button>
               </div>
             </div>
 
