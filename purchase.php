@@ -81,10 +81,7 @@ if(isset($_GET['logout'])){
                                     <label for="fullName">Full Name</label>
                                     <input type="text" class="form-control" name="fullName" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" required>
-                                </div>
+                                
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col">
@@ -95,11 +92,7 @@ if(isset($_GET['logout'])){
                                                 <option value="3">3</option>
                                             </select>
                                         </div>
-                                        <!-- <div class="col">
-                                  <label for="totalPrice">Total</label>
-                                  <?php $ticketPrice =  $row['eventTicketPrice'] ?>
-                                   <input type="text" class="form-control" name="totalPrice" id="totalPrice" value="<?php echo $ticketPrice?>" disabled>
-                                  </div> -->
+                                        
                                     </div>
 
                                 </div>
@@ -146,17 +139,6 @@ if(isset($_GET['logout'])){
 
     <?php include 'footer.php' ?>
 
-
-    <script>
-        function updateTotal(x, y) {
-
-            // const qty = document.getElementById("ticketQty");
-            // const ticketQty = qty.options[qty.selectedIndex].value;
-            const totalPrice = document.getElementById('totalPrice');
-            totalPrice.value = x * y;
-            // $ticketQty
-        }
-    </script>
 </body>
 
 </html>

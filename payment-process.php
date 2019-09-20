@@ -6,7 +6,7 @@ $errors = array();
 $userEmail = $_SESSION['userEmail'];
 
 //check purchase form for free payment and add to orders
-if(isset($_POST['checkout-success'])){
+if(isset($_POST['checkout-free'])){
     $fullName = mysqli_real_escape_string($db, $_POST['fullName']);
     // $email = mysqli_real_escape_string($db, $_POST['email']);
     $ticketQty = mysqli_real_escape_string($db, $_POST['ticketQty']);
@@ -20,8 +20,23 @@ if(isset($_POST['checkout-success'])){
 
     header('location: myTickets.php');
     }
-    
+}
 
+//check purchase form for orders with payment and add to orders
+if(isset($_POST['checkout-payed'])){
+    $fullName = mysqli_real_escape_string($db, $_POST['fullName']);
+    // $email = mysqli_real_escape_string($db, $_POST['email']);
+    $ticketQty = mysqli_real_escape_string($db, $_POST['ticketQty']);
+    $eventID = mysqli_real_escape_string($db, $_POST['eventID']);
+
+
+    if(isset($_SESSION['userEmail'])){
+        $query = "INSERT INTO orders (userEmail, userName, eventID, ticketQty) VALUES ('$userEmail', '$fullName', '$eventID', '$ticketQty')";
+
+    mysqli_query($db, $query);
+
+    header('location: myTickets.php');
+    }
 }
 
 
